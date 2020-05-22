@@ -8,8 +8,9 @@ from os import path
 #  按月份将所有文件，以月为单位存入Records目录
 #  在Records中的月份文件夹中，同步README.md文件内容
 
+contentName = "视觉笔记"
 
-zipFilePath = "/练字.zip"
+zipFilePath = "/" + contentName + ".zip"
 localPath = os.getcwd()
 
 # unzip to 练字 folder
@@ -21,7 +22,7 @@ def moveFiles():
     # Delete README files first.
     deleteREADME()
     
-    sourceFileList = os.listdir(localPath + "/练字")
+    sourceFileList = os.listdir(localPath + "/" + contentName)
 
     for fileName in sorted(sourceFileList,key=str.lower):
         fileInMonth = fileName.split(".")[0].split("_")[1]
@@ -31,7 +32,7 @@ def moveFiles():
         confirmFolderExist(targetFolder)
 
         # move record to Records folder
-        os.replace(localPath + "/练字/" + fileName, targetFolder + "/" + fileName)
+        os.replace(localPath + "/" + contentName + "/" + fileName, targetFolder + "/" + fileName)
 
         # write Record to README
         confirmREADMEExist(targetFolder)
