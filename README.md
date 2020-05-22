@@ -5,7 +5,7 @@ GR(Graphic Recorder) 的 学习过程记录。
 
 极客时间的《视觉笔记入门课》。
 
-![视觉笔记入门课-高伟](Recorder/course.jpeg)
+![视觉笔记入门课-高伟](./course.jpeg)
 
 ## 记录
 
